@@ -1,10 +1,14 @@
 import React from "react";
-import OpeningPage from "./openingPage";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import HomeScreen from "./screens/HomeScreen";
+import ActionScreen from "./screens/ActionScreen";
 
 const App = () => {
   return (
     <>
-      <OpeningPage></OpeningPage>
+      <HomeScreen></HomeScreen>
     </>
   );
 };

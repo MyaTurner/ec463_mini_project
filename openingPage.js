@@ -8,7 +8,7 @@ const OpeningPage = () => {
       <Text style={styles.titletext}>Are they a Bot or Not?</Text>
       <Text style={styles.basetext}>
         {" "}
-        MAKE AURE THE TWEETS YOU SEE ARE FROM REAL PEOPLE
+        MAKE SURE THE TWEETS YOU SEE ARE FROM REAL PEOPLE
       </Text>
     </View>
   );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: "95%",
+    aspectRatio: 5,
     height: 150,
     resizeMode: "contain",
   },
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
   titletext: {
     fontFamily: "Quicksand",
     color: "#FFFFFF",
-    fontSize: "28.3",
+    fontSize: "30",
     fontWeight: "bold",
   },
 
   basetext: {
     fontFamily: "Montserrat",
     color: "#FFFFFF",
-    fontSize: "10.4",
+    fontSize: "11",
   },
 });
 export default OpeningPage;

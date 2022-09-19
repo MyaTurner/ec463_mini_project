@@ -39,7 +39,7 @@ const InformationBlock = ({ userInfo, loading }) => {
 
 const ActionScreen = () => {
   const [handle, setHandle] = useState("");
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
@@ -51,7 +51,6 @@ const ActionScreen = () => {
     });
     return () => {
       mounted = false;
-      setloading(false);
     };
   }, [handle]);
 

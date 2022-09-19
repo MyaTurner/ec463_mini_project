@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import { Text, View, Image, Button, TextInput } from "react-native";
+import { Text, View, ActivityIndicator, TextInput } from "react-native";
 
 import styles from "../styles";
 import fakeData from "../fakeData";
 
-const Separator = () => <View style={styles.separator} />;
-
 const data = fakeData();
+
+const Separator = () => <View style={styles.separator} />;
 
 const ActionScreen = () => {
   const [handle, setHandle] = useState("");
+  const [showLoading, setShowloading] = useState(true);
 
   // Find the user information for given twitter handle
-  const userInfo = data[handle];
-  console.log(userInfo);
+
+  if (handle in data) {
+    const userInfo = data[handle];
+    console.log(userInfo);
+  }
   return (
     <View style={styles.viewAction}>
       <Text style={styles.actionTitle}>ENTER THE TWITTER HANDLE</Text>
@@ -30,11 +34,18 @@ const ActionScreen = () => {
       <Separator />
       <Separator />
 
-      <Text style={styles.actionText}>BOT OR NOT? : </Text>
+      <Text style={styles.actionText}>
+        BOT OR NOT?: {/*userInfo.botOrnot */}
+      </Text>
+      <ActivityIndicator />
       <Separator />
-      <Text style={styles.actionText}>POSITIVE OR NEGATIVE? :</Text>
+      <Text style={styles.actionText}>
+        POSITIVE OR NEGATIVE?: {/*userInfo.posOrneg */}
+      </Text>
       <Separator />
-      <Text style={styles.actionText}>AVERAGE TOPIC? :</Text>
+      <Text style={styles.actionText}>
+        AVERAGE TOPIC?: {/*userInfo.avgTopic */}
+      </Text>
       <Separator />
     </View>
   );

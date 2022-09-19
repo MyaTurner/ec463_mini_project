@@ -1,7 +1,7 @@
 const fakeData = () => {
   let info = {
     "@myajenni": {
-      botOrNot: "NOT",
+      botOrnot: "NOT",
       posOrneg: "POSITIVE",
       avgTopic: "HOW GREAT SHE IS",
     },

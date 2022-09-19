@@ -45,10 +45,11 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat",
     color: "#FFFFFF",
     fontSize: "20",
+    textAlign: "auto",
   },
 
   separator: {
-    marginBottom: 20,
+    marginVertical: 8,
   },
 });
 

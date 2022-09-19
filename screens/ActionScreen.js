@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, ActivityIndicator, TextInput } from "react-native";
 
 import styles from "../styles";
 import fakeData from "../fakeData";
+import getUserInfo from "../services/getUserInfo";
 
 // Get fake data
-const data = fakeData();
+const accounts = fakeData();
 
 // Define components
 const Separator = () => <View style={styles.separator} />;
@@ -18,11 +19,17 @@ const InformationBlock = ({ userInfo, loading }) => {
   } else {
     content = (
       <View style={styles.viewAction}>
-        <Text style={styles.actionText}>BOT OR NOT?:</Text>
+        <Text style={styles.actionText}>
+          BOT OR NOT? : {userInfo?.botOrnot}
+        </Text>
         <Separator />
-        <Text style={styles.actionText}>POSITIVE OR NEGATIVE?:</Text>
+        <Text style={styles.actionText}>
+          POSITIVE OR NEGATIVE? : {userInfo?.posOrneg}
+        </Text>
         <Separator />
-        <Text style={styles.actionText}>AVERAGE TOPIC?:</Text>
+        <Text style={styles.actionText}>
+          AVERAGE TOPIC? : {userInfo?.avgTopic}
+        </Text>
         <Separator />
       </View>
     );
@@ -33,7 +40,20 @@ const InformationBlock = ({ userInfo, loading }) => {
 const ActionScreen = () => {
   const [handle, setHandle] = useState("");
   const [loading, setloading] = useState(true);
-  const [userInfo, setUserInfo] = useState("");
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    let mounted = true;
+    getUserInfo(handle).then((info) => {
+      if (mounted) {
+        setUserInfo(info);
+      }
+    });
+    return () => {
+      mounted = false;
+      setloading(false);
+    };
+  }, [handle]);
 
   return (
     <View style={styles.viewAction}>

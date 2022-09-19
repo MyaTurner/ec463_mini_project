@@ -6,8 +6,8 @@ const fakeData = () => {
       avgTopic: "HOW GREAT SHE IS",
     },
 
-    "@wurldending": {
-      botOrNot: "BOT",
+    "@wurldsending": {
+      botOrnot: "BOT",
       posOrneg: "NEGATIVE",
       avgTopic: "DOOMSDAY",
     },

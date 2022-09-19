@@ -9,7 +9,7 @@ const screens = {
     screen: HomeScreen,
   },
 
-  Action: {
+  BotOrNot: {
     screen: ActionScreen,
   },
 };

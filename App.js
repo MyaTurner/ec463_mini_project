@@ -7,7 +7,7 @@ import Navigator from "./routes/homeStack";
 const App = () => {
   return (
     <>
-      <HomeScreen></HomeScreen>
+      <Navigator></Navigator>
     </>
   );
 };

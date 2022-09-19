@@ -3,7 +3,10 @@ import { Text, View, Image, Button, Alert } from "react-native";
 
 import styles from "../styles";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+  const pressHandler = () => {
+    navigation.navigate("BotOrNot");
+  };
   return (
     <View style={styles.view}>
       <Image style={styles.image} source={require("../assets/robot.png")} />
@@ -14,7 +17,7 @@ const HomeScreen = () => {
 
       <Button
         title="Click to Find the Bots"
-        onPress={() => Alert.alert("Button worked!")}
+        onPress={pressHandler}
         color="#FFFFFF"
       ></Button>
     </View>

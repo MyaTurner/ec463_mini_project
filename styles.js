@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#119afb",
   },
 
+  viewAction: {
+    flex: 1,
+    height: 40,
+    alignItems: "center",
+    backgroundColor: "#119afb",
+  },
+
   image: {
     aspectRatio: 5,
     height: 150,
@@ -25,6 +32,23 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat",
     color: "#FFFFFF",
     fontSize: "11",
+  },
+
+  actionTitle: {
+    marginTop: 40,
+    fontFamily: "Montserrat",
+    color: "#FFFFFF",
+    fontSize: "20",
+  },
+
+  actionText: {
+    fontFamily: "Montserrat",
+    color: "#FFFFFF",
+    fontSize: "20",
+  },
+
+  separator: {
+    marginBottom: 20,
   },
 });
 

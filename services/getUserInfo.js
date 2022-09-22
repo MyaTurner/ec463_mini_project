@@ -1,5 +1,6 @@
 import fakeData from "../fakeData";
 
+// Fake an API call
 const accounts = fakeData();
 
 const getUserInfo = (handle) => {
